@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Main Page</title>
+<style>
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+		sans-serif;
+	margin: 0;
+}
+
+.container {
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.center {
+	background: white;
+	width: 95%;
+	border-radius: 10px;
+	border-radius: 24px;
+	border: 3px solid #FFD52E;
+	background: #FFF;
+	box-shadow: 0px 4px 50px 0px rgba(255, 213, 46, 0.80);
+	margin-bottom: 30px;
+	border-radius: 10px;
+}
+
+.button4 {
+	height: 48px;
+	width: 215px;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #000000;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	box-shadow: 0px 4px 15px 0px #D9D9D9;
+	margin-top: 50px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.button4:hover {
+	background: #FFC727;
+	color: white;
+	text-decoration: wavy;
+}
+
+.button7 {
+	background: #FFC727;
+	background: FFC727;
+	color: white;
+	height: 36px;
+	width: 70px;
+	border: 0px;
+	border-radius: 22px;
+}
+
+.button7:hover {
+	background: white;
+	text-decoration: wavy;
+	border: 1px solid black;
+	color: #000000;
+}
+
+.button-text {
+	font-size: 15px;
+	position: absolute;
+	bottom: 5px;
+	left: 4px;
+	padding: 10px 31px;
+}
+
+.userGreet {
+	font-size: 25px;
+	position: relative;
+	left: 10px;
+	width: 70%;
+}
+
+.text-title {
+	margin: 30px 0;
+	text-align: center;
+	font-size: 26px;
+}
+
+.text-content {
+	margin: 30px 0;
+	font-size: 18px;
+}
+</style>
+</head>
+<body
+	th:style="'background: url(/images/4907157.jpg) no-repeat center center fixed;'">
+	<table>
+		<tr>
+			<td style="width: 50%"><p class="userGreet">
+					Welcome, <b>[[${username}]]!</b>
+				</p></td>
+
+			<td style="width: 50%; position: relative; left: 50%">
+				<table>
+					<tr>
+						<td>
+							<button class="button4"
+								onclick="window.location.href='addNotes';return false;">Add
+								Note</button>
+						</td>
+						<td>
+							<form th:action="@{/logout}" method="post">
+								<input type="hidden" th:name="${_csrf.parameterName}"
+									th:value="${_csrf.token}" />
+								<button class="button4" type="submit">Logout</button>
+							</form>
+						</td>
+					</tr>
+				</table>
+
+			</td>
+
+		</tr>
+	</table>
+	<hr>
+
+	<div class="container">
+		<div class="center" th:if="${notes.isEmpty()}">
+			<h2 class="userGreet">Please Create a Note</h2>
+			<img alt="" th:src="@{/images/nodata.jpg}" width="90%">
+
+		</div>
+
+
+		<!-- Generates -->
+		<div th:if="${!notes.isEmpty()}">
+			<div th:each="note:${notes}" class="center">
+				<table>
+					<tr align="center">
+						<td class="text-title">[[${note.title}]]</td>
+					</tr>
+					<tr class="text-content">
+						<td>Created on : <span
+							th:text="${#dates.format(note.createdAt, 'yyyy-MM-dd')}"></span>
+							<span style="margin-left: 10px" th:if="${note.updatedAt !=null}">
+								Updated on : <span
+								th:text="${#dates.format(note.updatedAt, 'yyyy-MM-dd')}"></span>
+						</span>
+
+						</td>
+					</tr>
+					<tr class="text-content">
+						<td>Content</td>
+					</tr>
+					<tr>
+						<td th:text="${note.content}"></td>
+					</tr>
+					<tr>
+						<td><a style="text-decoration: none;"
+							th:href="@{/updateNote(id=${note.noteId})}">
+								<button class="button7"
+									onclick="if(!(confirm('Do you want to Update?')))return false">Update</button>
+						</a> <a style="text-decoration: none;"
+							th:href="@{/deleteNote(id=${note.noteId})}">
+								<button class="button7"
+									onclick="if(!(confirm('Do you want to delete?')))return false">Delete</button>
+						</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home page</title>
+<style>
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+		sans-serif;
+	margin: 0;
+}
+
+.container {
+	width: 90%;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.center {
+	background: white;
+	width: 50%;
+	border-radius: 10px;
+	border-radius: 24px;
+	border: 3px solid #FFD52E;
+	background: #FFF;
+	box-shadow: 0px 4px 50px 0px rgba(255, 213, 46, 0.80);
+	margin-bottom: 30px;
+	border-radius: 10px;
+	border-radius: 10px;
+}
+
+.button7 {
+	background: #FFC727;
+	background: FFC727;
+	color: white;
+	height: 36px;
+	width: 70px;
+	border: 0px;
+	border-radius: 22px;
+	margin-left: 30px;
+}
+
+.button7:hover {
+	background: white;
+	text-decoration: wavy;
+	border: 1px solid black;
+	color: #000000;
+}
+
+.userGreet {
+	font-size: 25px;
+	position: relative;
+	left: 10px;
+	width: 70%;
+}
+
+.errorMsg {
+	font-size: 20px;
+	position: relative;
+	left: 10px;
+	width: 70%;
+}
+
+.errorHint {
+	font-size: 17px;
+	position: relative;
+	left: 10px;
+	width: 70%;
+}
+</style>
+
+</head>
+<body
+	th:style="'background: url(/images/4907157.jpg) no-repeat center center fixed;'">
+
+	<div style="margin-top: 30px" class="container">
+
+		<div class="center">
+			<h2 class="userGreet">Error</h2>
+			<p class="errorMsg">
+				Error Code : <span th:text="${status}"></span>
+			</p>
+			<div class="errorHint">
+				<p th:if="${status==404}">The requested page was not found.
+					Please Go Back</p>
+
+				<p th:if="${status==405}">Method Not Allowed, target resource
+					doesn't support this method. Please Go Back</p>
+				<p th:if="${status==403}">Access to this resource is forbidden.
+					Please Go Back</p>
+				<p th:if="${status==500}">Internal Server Error. Please try
+					again after sometime.</p>
+			</div>
+			<button class="button7" onclick="window.location.href='/';return false;">Back</button>
+			<div style="display: flex; justify-content: center; margin: 40px">
+				<img th:if="${status==404}" alt="" th:src="@{/images/404.jpg}"
+					width="95%" align="middle"> <img th:if="${status==403}"
+					alt="" th:src="@{/images/403.jpeg}" width="95%" align="middle">
+				<img th:if="${status==405}" alt="" th:src="@{/images/405.jpeg}"
+					width="80%" align="middle"> <img th:if="${status==500}"
+					alt="" th:src="@{/images/500.jpeg}" width="95%" align="middle">
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

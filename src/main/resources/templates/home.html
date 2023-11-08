@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SPLASH SCREEN</title>
+<style>
+body {
+	margin: 0px;
+	padding: 0px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+		sans-serif;
+}
+
+.man img {
+	display: flex;
+	width: 369px;
+	height: 369px;
+	padding: 31.634px 12.5px 31.65px 12.491px;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	flex-shrink: 0;
+	top: 271px;
+	left: 317px;
+}
+
+.man2 img {
+	display: flex;
+	width: 200px;
+	height: 200px;
+	padding: 31.634px 12.5px 31.65px 12.491px;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	flex-shrink: 0;
+	top: 90px;
+	left: 725px;
+}
+
+.board img {
+	display: flex;
+	width: 400px;
+	height: 350px;
+	padding: 31.634px 12.5px 31.65px 12.491px;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	flex-shrink: 0;
+	top: 65px;
+	left: 880px;
+}
+
+.keynote img {
+	display: flex;
+	padding: 31.634px 12.5px 31.65px 12.491px;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	flex-shrink: 0;
+	top: 90px;
+	left: 725px;
+	width: 393px;
+	height: 314px;
+	top: -23px;
+	left: 260px;
+}
+
+.arrow1 {
+	display: flex;
+	padding: 31.634px 12.5px 31.65px 12.491px;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	flex-shrink: 0;
+	top: 131px;
+	left: 320px;
+	width: 164.2px;
+	height: 113.07px;
+}
+
+.arrow2 {
+	display: flex;
+	padding: 31.634px 12.5px 31.65px 12.491px;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	flex-shrink: 0;
+	top: -9px;
+	left: 554px;
+	width: 179.2px;
+	height: 181.07px;
+}
+
+.Register input {
+	position: absolute;
+	width: 439px;
+	height: 100px;
+	top: 491px;
+	left: 783px;
+	border-radius: 12px;
+	font-size: 40px;
+	font-weight: 600;
+	line-height: 26px;
+	letter-spacing: 0em;
+	text-align: center;
+	color: white;
+	background-color: #FFD52E;
+	border: 2px solid #FFD52E;
+}
+
+.Register input:hover {
+	text-decoration: wavy;
+	border: 2px solid #FFD52E;
+	color: #FFD52E;
+	background-color: white;
+	cursor: pointer;
+}
+</style>
+</head>
+<body
+	th:style="'background: url(/images/4907157.jpg) no-repeat center center fixed;'">
+	<div class="container">
+		<div class="man">
+			<img th:src="@{/images/man.png}" alt="" class="man">
+		</div>
+		<div class="man2">
+			<img th:src="@{/images/man2.png}" alt="" class="man2">
+		</div>
+		<div class="board">
+			<img th:src="@{/images/board.png}" alt="" class="board">
+		</div>
+		<div class="keynote">
+			<img th:src="@{/images/keynotes.png}" alt="" class="keynote">
+		</div>
+		<div class="arrow1">
+			<img th:src="@{/images/arrow1.png}" alt="" class="arrow1">
+		</div>
+		<div class="arrow2">
+			<img th:src="@{/images/arrow2.png}" alt="" class="arrow2">
+		</div>
+		<div class="Register">
+			<input name="submit" type="Submit" value="Get Started"
+				onclick="window.location.href='login';return false">
+		</div>
+	</div>
+</body>
+</html>
