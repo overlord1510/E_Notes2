@@ -39,16 +39,12 @@ eNotes is a web application built using Spring MVC that allows users to create, 
 ## Usage
 
 1. **Register a new account or log in with an existing account.**
-    ![Login Page](images/login.png)
 
 2. **Create a new note by clicking the 'New Note' button.**
-    ![Create Note](images/create_note.png)
 
 3. **Edit or delete notes by clicking the respective buttons.**
-    ![Edit Note](images/edit_note.png)
 
 4. **Search for notes using the search bar.**
-    ![Search Notes](images/search.png)
 
 ## Screenshots
 
