@@ -1,0 +1,102 @@
+@media screen and(max-width:350) and (max-height:600px)
+        {
+            
+body{
+background-size: contain;
+
+
+}
+
+.man img{
+    display: flex;
+    width: 462px;
+    height: 491px;
+    padding: 31.634px 12.5px 31.65px 12.491px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-shrink: 0;
+    top: 756px;
+    left: 163px;
+}
+.man2 img{
+    display: flex;
+width: 251px;
+height: 237px;
+padding: 31.634px 12.5px 31.65px 12.491px;
+justify-content: center;
+align-items: center;
+position: absolute;
+flex-shrink: 0;
+top: 393px;
+left: 615px;
+}
+.board img{
+    display: flex;
+width: 400px;
+height: 350px;
+padding: 31.634px 12.5px 31.65px 12.491px;
+justify-content: center;
+align-items: center;
+position: absolute;
+flex-shrink: 0;
+top: 650px;
+left: 616px;
+}
+.keynote img{
+    display: flex;
+padding: 31.634px 12.5px 31.65px 12.491px;
+justify-content: center;
+align-items: center;
+position: absolute;
+flex-shrink: 0;
+top: 77px;
+left: 725px;
+width: 472px;
+height: 376px;
+top: 321px;
+left: 124px;
+}
+.arrow1{
+    display: flex;
+    padding: 31.634px 12.5px 31.65px 12.491px;
+justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-shrink: 0;
+    top: 461px;
+    left: 314px;
+    width: 164.2px;
+    height: 113.07px;
+}
+.arrow2{
+    display: flex;
+    padding: 31.634px 12.5px 31.65px 12.491px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-shrink: 0;
+    top: 279px;
+    left: 432px;
+    width: 179.2px;
+    height: 181.07px;
+}
+
+.Register input{
+    position: absolute;
+width: 602px;
+height: 128px;
+top: 1419px;
+left: 257px;
+border-radius: 12px;
+font-size: 56px;
+font-weight: 600;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: center;
+color: white;
+background-color: #FFD52E;
+border: 2px solid #FFD52E;
+}
+
+        }
